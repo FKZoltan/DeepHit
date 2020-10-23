@@ -94,8 +94,8 @@ def get_random_hyperparameters(out_path):
 
 
 ##### MAIN SETTING
-OUT_ITERATION               = 5
-RS_ITERATION                = 50
+OUT_ITERATION               = 1
+RS_ITERATION                = 5
 
 data_mode                   = 'METABRIC'
 seed                        = 1234
@@ -143,7 +143,7 @@ for itr in range(OUT_ITERATION):
         print(new_parser)
 
         # get validation performance given the hyperparameters
-        tmp_max = get_main.get_valid_performance(DATA, MASK, new_parser, itr, EVAL_TIMES, MAX_VALUE=max_valid)
+        tmp_max, model = get_main.get_valid_performance(DATA, MASK, new_parser, itr, EVAL_TIMES, MAX_VALUE=max_valid)
 
         if tmp_max > max_valid:
             max_valid = tmp_max

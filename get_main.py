@@ -188,4 +188,4 @@ def get_valid_performance(DATA, MASK, in_parser, out_itr, eval_time=None, MAX_VA
                 else:
                     stop_flag += 1
 
-    return max_valid
+    return max_valid, model, tr_data,te_data, tr_time,te_time, tr_label,te_label,tr_mask1,te_mask1, tr_mask2,te_mask2
